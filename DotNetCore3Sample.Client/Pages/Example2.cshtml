@@ -1,0 +1,46 @@
+﻿@page "/example2"
+
+@inherits Example2Model
+
+@functions{
+    string textName = null;
+
+    protected void AddName2Options()
+    {
+        AddOptionValue(textName);
+    }
+}
+
+<div class="container-fluid">
+    <div class="col">
+        <div class="row">
+            <Input bind="@textName" />
+            <button class="btn btn-outline-dark" onclick="@AddName2Options">
+                <i class="fa fa-pencil-square-o"></i>
+                Add
+            </button>
+        </div>
+        <div class="col">
+            <EditForm Model="@param" OnInvalidSubmit="@HandleInvalid">
+                <div class="col">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                </div>
+                <div class="col-md-4">
+                    <p>Selected Name : @param.name </p>
+                    <div class="row">
+                        <InputSelect bind-Value="@param.name">
+                            @foreach (var item in @OptionValues)
+                            {
+                                <option value=@item.Value>@item.Value</option>
+                            }
+                        </InputSelect>
+                        <button type="submit" class="btn btn-block btn-success">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>

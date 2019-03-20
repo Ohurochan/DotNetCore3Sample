@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28711.60
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCore3Sample.Server", "DotNetCore3Sample.Server\DotNetCore3Sample.Server.csproj", "{EE3B98C1-B6E4-458E-A358-3EAF6CE3FAA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCore3Sample.Server", "DotNetCore3Sample.Server\DotNetCore3Sample.Server.csproj", "{EE3B98C1-B6E4-458E-A358-3EAF6CE3FAA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCore3Sample.Client", "DotNetCore3Sample.Client\DotNetCore3Sample.Client.csproj", "{85B0D42D-8EFA-46E7-A2D0-A5A55A3C2EA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCore3Sample.Client", "DotNetCore3Sample.Client\DotNetCore3Sample.Client.csproj", "{85B0D42D-8EFA-46E7-A2D0-A5A55A3C2EA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCore3Sample.Shared", "DotNetCore3Sample.Shared\DotNetCore3Sample.Shared.csproj", "{951CFC31-0698-431D-8158-B71C6D964059}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCore3Sample.Shared", "DotNetCore3Sample.Shared\DotNetCore3Sample.Shared.csproj", "{951CFC31-0698-431D-8158-B71C6D964059}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
