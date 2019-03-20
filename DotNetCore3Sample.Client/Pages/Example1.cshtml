@@ -1,0 +1,70 @@
+﻿@page "/example1"
+@inject IJSRuntime _jsRuntime
+
+@* Example1. Open/Close Bootstrap Modal from C# *@
+@functions {
+    string example1title = "Example1";
+    string example1text = "Example1. Open/Close Bootstrap Modal from C#";
+    string modalTextPlaceHolder = "Enter Something";
+    string modalText = null;
+
+
+    protected async Task Submit()
+    {
+        await Task.Run(() =>
+        {
+            example1text = string.IsNullOrEmpty(modalText) ? example1text : modalText;
+            modalText = null;
+        });
+    }
+
+    protected async Task CloseExample1()
+    {
+        await Submit();
+        _ = _jsRuntime.InvokeAsync<bool>("CloseModalById", "#BootStrapModal");
+    }
+}
+
+<div class="container-fluid">
+    <div class="col">
+        <div class="col-12 ">
+            <p>example1text : @example1text</p>
+        </div>
+        <button class="btn btn-outline-dark" data-toggle="modal" data-target="#BootStrapModal">
+            <i class="fa fa-pencil-square-o"></i>
+            Example1
+        </button>
+    </div>
+</div>
+
+<div class="modal fade" id="BootStrapModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">@example1title</h3>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">X</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <input class="col-12 " placeholder="@modalTextPlaceHolder" bind="@modalText" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="container-fluid">
+                    <div class="col">
+                        <button type="submit" class="btn btn-block btn-success" data-dismiss="modal" onclick="@Submit">
+                            Close By Bootstrap
+                        </button>
+                        <button type="button" class="btn btn-block btn-danger" onclick="@CloseExample1">
+                            Close By C#
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
